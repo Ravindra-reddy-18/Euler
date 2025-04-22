@@ -4,4 +4,4 @@ Welcome to my Project Euler solutions repository! This repo contains my personal
 
 ## 🗂 Structure
 
-Each problem is placed in its own file or folder and named accordingly, for example:
+Each problem is placed in its own file or folder and named accordingly.
