@@ -1,4 +1,4 @@
-package org.example.Problem2;
+package org.example.ProblemTwo;
 
 public class ProblemTwo {
 
