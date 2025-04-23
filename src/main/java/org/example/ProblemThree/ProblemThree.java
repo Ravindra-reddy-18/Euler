@@ -4,7 +4,6 @@ public class ProblemThree {
 
 //method to check if a factor is prime
     public static boolean isPrime(long a){
-        int count=0;
         for(long i=2;i<=Math.sqrt(a);i++){
             if(a%i==0)return false;
         }
