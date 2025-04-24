@@ -28,5 +28,5 @@ Checks if a number is prime by testing divisibility up to √a.
 - Sets the input number `x = 600851475143`.
 - Calls `factors(x)` and prints the result.
 
+### To customize change the method call of factors in main.
 ---
-## To customize change the method call of factors in main.
