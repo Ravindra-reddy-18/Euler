@@ -11,6 +11,7 @@ public class ProblemThree {
     }
     //filters factors and calls isPrime
     public static long factors(long x){
+        if(isPrime(x))return -1;
         for(long i=(long)Math.sqrt(x);i>1;i--){
             if(x%i==0&&isPrime(i))return i;
         }
