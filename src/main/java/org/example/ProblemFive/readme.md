@@ -35,4 +35,4 @@ Specifically, it solves for numbers **1 through 20**, a variant of **Project Eul
 
 
 ---
-I tried the brute force method first, but know there has to be some better way of doing it, almost got there, however, one of the problem's forum messages made me relaize i was on the right path, and how simple it is. There are some really cool approaches in those forums, especially, one on the palindrome product. I didn't even know we can solve that one with just a pen and a paper. 😂
+I tried the brute force method first, but know there has to be some better way of doing it, almost got there, however, one of the problem's forum messages made me realize i was on the right path, and how simple it is. There are some really cool approaches in those forums, especially, one on the palindrome product. I didn't even know we can solve that one with just a pen and a paper. 😂
