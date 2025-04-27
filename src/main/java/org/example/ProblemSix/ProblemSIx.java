@@ -1,4 +1,4 @@
-package ProblemSix;
+package org.example.ProblemSix;
 
 public class ProblemSIx {
     public static void main(String[] args){
