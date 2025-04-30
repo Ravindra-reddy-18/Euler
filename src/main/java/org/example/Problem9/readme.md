@@ -1,16 +1,23 @@
-# Project Euler Problem 9 - Special Pythagorean Triplet
+# Project Euler Problem 9: Special Pythagorean Triplet
 
-This Java program finds the **Pythagorean triplet (a, b, c)** such that:
+This repository contains a Java solution to [Project Euler Problem 9](https://projecteuler.net/problem=9), which asks:
 
-- a² + b² = c²
-- a + b + c = 1000
+> A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+>
+> a² + b² = c²
+>
+> For example, 3² + 4² = 9 + 16 = 25 = 5².
+>
+> There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+>
+> Find the product abc.
 
-It then prints the product `abc`.
+---
 
-## 🚀 How It Works
+## 💡 Approach
 
-- The `tri` function checks if three integers form a Pythagorean triplet.
-- The `main` method brute-forces all combinations where `a + b + c = 1000` and `a < b < c`.
-- Once it finds the correct triplet, it prints the product and exits.
+- The program uses a **nested loop** to find values of `a` and `b` such that `a + b + c = 1000`, where `c = 1000 - a - b`.
+- It leverages the constraint `a < b < c` to reduce unnecessary iterations by bounding `b < (1000 - a) / 2`.
+- It checks the condition `a² + b² = c²` using simple integer arithmetic (no floating-point errors).
 
-
+---
