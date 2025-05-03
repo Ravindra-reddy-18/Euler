@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Problem11 {
     public static void main(String[] args){
         String s="08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08\n" +
-                "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00\n" +
+                 "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00\n" +
                 "81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65\n" +
                 "52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91\n" +
                 "22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80\n" +
@@ -24,6 +24,7 @@ public class Problem11 {
                 "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\n" +
                 "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
+        //code to create a 2d grid
         String[] s2=s.split("\n");
         List<List<Integer>> li=new ArrayList<>();
         for(int i=0;i<s2.length;i++){
@@ -32,6 +33,7 @@ public class Problem11 {
                 li.get(i).add(Integer.valueOf(x));
             }
         }
+        //highest product horizontally
         int maxH=0;
         for(List<Integer> row:li){
             int val;
@@ -40,6 +42,7 @@ public class Problem11 {
                 if(val>maxH)maxH=val;
             }
         }
+        //highest product vertically
         int maxV=0;
         for(int i=0;i<=20-4;i++){
             int val;
@@ -48,6 +51,25 @@ public class Problem11 {
                 if(val>maxV)maxV=val;
             }
         }
-        System.out.println(maxV+" "+maxH);
+        //highest product left to right diagonals
+        int maxLR=0;
+        for(int i=0;i<=20-4;i++) {
+            for (int j = 0; j <= 20 - 4; j++) {
+            int  val = li.get(i).get(j) * li.get(i + 1).get(j + 1) * li.get(i + 2).get(j + 2) * li.get(i + 3).get(j + 3);
+                if (val > maxLR) maxLR = val;
+            }
+        }
+        //highest product right to left diagonals
+        int maxRL=0;
+        for(int i=0;i<=20-4;i++) {
+            int val;
+            for (int j = 19; j >=3; j--) {
+                 val = li.get(i).get(j) * li.get(i + 1).get(j - 1) * li.get(i + 2).get(j - 2) * li.get(i + 3).get(j - 3);
+                if (val > maxRL) maxRL = val;
+            }
+        }
+        //finding the highest product of them all
+        System.out.println(maxH > maxV ? (maxH > maxLR ? (Math.max(maxH, maxRL)) : (Math.max(maxLR, maxRL))) : (maxV > maxLR ? (Math.max(maxV, maxRL)) : (Math.max(maxLR, maxRL))));
+
     }
 }
