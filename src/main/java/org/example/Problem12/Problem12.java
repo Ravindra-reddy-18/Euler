@@ -1,22 +1,29 @@
 package org.example.Problem12;
-import java.time.LocalTime;
 public class Problem12 {
-    static boolean _500Factors(long n){
-        int count=2;
+    static int count(long n){
+        int count=0;
         for(long i=1;i*i<=n;i++){
             if(n%i==0){
                 count+=2;
                 if(n/i==i)count--;
             }
         }
-        return count>500;
+        return count;
     }
     public static void main(String[] args){
-        long n=0;
-        System.out.println(LocalTime.now());
-      for(int i=1;;i++){
-          n+=i;
-          if(_500Factors(n)){System.out.println(n+"\n"+LocalTime.now());return;}
+        int i;
+        int count;
+        long start=System.currentTimeMillis();
+      for(i=1;;i++){
+          if(i%2==0) {
+          count=count(i/2)*count(i+1);
+          }
+          else{
+              count=count(i)*count((i+1)/2);
+          }
+          if(count>500)break;
       }
+      System.out.println(System.currentTimeMillis()-start);
+     System.out.println(i*(i+1)/2);
     }
 }
